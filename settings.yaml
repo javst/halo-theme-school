@@ -1,0 +1,75 @@
+genernal:
+  label: 基本设置
+  items:
+    icp:
+      name: icp
+      label: ICP备案号
+      type: text
+      placeholder: '请填写ICP备案号'
+    code_pretty:
+      name: code_pretty
+      label: 文章代码高亮主题
+      type: select
+      default: Default
+      options:
+        - value: Default
+          label: Default
+        - value: Coy
+          label: Coy
+        - value: Dark
+          label: Dark
+        - value: Funky
+          label: Funky
+        - value: Okaidia
+          label: Okaidia
+        - value: Solarized Light
+          label: Solarized Light
+        - value: Tomorrow Night
+          label: Tomorrow Night
+        - value: Twilight
+          label: Twilight
+aside:
+  label: 轮播、侧边栏设置
+  items:
+    weixin_gongzhonghao:
+      name: weixin_gongzhonghao
+      label: 公众号二维码
+      type: attachment
+      placeholder: '请选择微信公众号'
+    gongzhonghao_remark:
+      name: gongzhonghao_remark
+      label: 公众号字描述
+      type: text
+      placeholder: '图片描述'
+    carousel_big:
+      name: carousel_big
+      label: 轮播图设置
+      type: text
+      placeholder: '存在的分类slug,不填不展示,文章数小于3不展示'
+    first_aside:
+      name: first_aside
+      label: 分类1（列表样式）
+      type: text
+      placeholder: '存在的分类slug,不填不展示'
+    second_aside:
+      name: second_aside
+      label: 分类2(卡片样式)
+      type: text
+      placeholder: '存在的分类slug,不填不展示'
+    show_tag:
+      name: show_tag
+      label: 标签
+      type: radio
+      data-type: bool
+      default: true 
+      description: ''
+      options: 
+        - value: true 
+          label: 开启
+        - value: false
+          label: 关闭
+    tag_number:
+      name: tag_number
+      label: 标签显示数量
+      type: number
+      default: 100

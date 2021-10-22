@@ -1,0 +1,11 @@
+id: wcool
+name: wcool
+author:
+  name: wcool
+  website: https://wsw.cool
+description: wcool
+logo:
+website: https://wsw.cool
+repo: https://wsw.cool
+version: 1.1.0
+require: 1.4.8
