@@ -48,14 +48,13 @@
                             <div class="user-box">
                                 密码：<input id = "password" type="password" name="user" required="">
                             </div>
-                            <button id="login" class="wcool-button" href="#">
-                                登录
-                            </button>
-
-                            <button type="button" id="show-register" class="wcool-button" href="#">
-                                注册
-                            </button>
                         </form>
+                        <button id="login" type="button" class="wcool-button" href="#">
+                            登录
+                        </button>
+                        <button type="button" id="show-register" class="wcool-button" href="#">
+                            注册
+                        </button>
                     </div>
 
                 </div>

@@ -4,7 +4,18 @@ $(document).ready(function(){
 
         if($("#username").val().length>0){
             if ($("#password").val().length>0){
-                $('#user').submit();
+                var url = $("#user").attr("action");
+                var username = $("#username").val();
+                var password = $("#password").val();
+                $.post(url,{"username":username,"password":password},function (data){
+                    $("#modal").addClass("md-show")
+                    var sure= 0 ;
+                    if(data == "登录成功"){
+                        sure = 1;
+                    }
+                    $("#modal .md-content").append("<h3>提示</h3><h4 style=\"text-align: center;\">"+data+"</h4>")
+                    $("#modal .md-content").append("<button onclick='login("+sure+")'  class=\"wcool-button\" href=\"#\">确定</button>")
+                })
             }
         }
     });
@@ -14,11 +25,15 @@ $(document).ready(function(){
     })
     function logout (){
         $.get("/logout",function (data,state){
-            alert(data);
             location.reload();
         })
 
     }
+
+
+
+
+
     $("#sure-logout").click(function (){
         $("#modal").addClass("md-show")
         $("#modal .md-content").append("<h3>提示</h3><h4 style=\"text-align: center;\">您确定要注销登录吗？</h4>")
@@ -42,6 +57,17 @@ function openRegister(){
     closeModel();
     $("#register-modal").addClass("md-show")
 }
+
+//login
+function login(data){
+    if (data){
+        closeModel()
+        location.reload()
+    }else {
+        closeModel()
+    }
+
+}
 //register
 function register(){
     if($("#register-username").val().length>0&&$("#register-nickname").val().length>0&&$("#register-password").val().length>0&&$("#register-department").val().length>0&&$("#register-class_name").val().length>0&&$("#register-student_num").val().length>0){
@@ -56,7 +82,6 @@ function register(){
         $.post($("#register-form").attr("action"), data,function (data){
             closeModel();
             $("#modal").addClass("md-show")
-            alert(1)
             $("#modal .md-content").append("<h3>提示</h3><h4 style=\"text-align: center;\">"+data+"</h4>")
             $("#modal .md-content").append("<button onclick='closeModel()'  class=\"wcool-button\" href=\"#\">确定</button>")
         })
@@ -73,7 +98,6 @@ function register(){
 
 function logout (){
     $.get("/logout",function (data,state){
-        alert(data);
         location.reload();
     })
 
