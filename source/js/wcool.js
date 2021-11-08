@@ -110,10 +110,11 @@ function closeModel(){
     $("#register-modal").removeClass("md-show")
 }
 function buyGoods(){
-    var postId = {"postId":$("#post-id").val()};
+    var postId = $("#post-id").val();
     var url = $("#buyForm").attr("action")
+    var amount = $("#amount").val()
     if(postId!=null){
-        $.post(url,postId,function (data){
+        $.post(url,{postId,amount:amount},function (data){
             $("#modal .md-content").empty()
             $("#modal .md-content").append("<h3>提示</h3><h4 style=\"text-align: center;\">"+data+"</h4>")
             $("#modal .md-content").append("<button onclick='closeModel()'  class=\"wcool-button\" href=\"#\">确定</button>")

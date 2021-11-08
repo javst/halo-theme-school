@@ -28,12 +28,13 @@
 <#--            价格框-->
             <#if is_post??>
             <div id="wpcom-post-thumb-3" class="widget widget_post_thumb">
-                <h3 class="widget-title" style="font-size:16px;">价格：<font color="#dc143c" style="margin:  10px 0">${price}</font>$</h3>
+                <h3 class="widget-title" style="font-size:16px;">价格：<font color="#dc143c" style="margin:  10px 0">${price}</font>¥</h3>
                 <h3 class="widget-title" style="font-size:16px;">库存：<font color="#dc143c" style="margin: 10px">${stock}</font>件</h3>
                 <form method="post" id="buyForm" action="${blog_url!}/buyGoods">
                     <input name="postId" id="post-id" value="${post.id}" type="hidden">
                 </form>
                 <button type="button" id="buyConfigure" class="wcool-button" value="购买">申请</button>
+                <input type="text" style="margin: 0 10px;width: 30px" value="1" name="amount" id="amount">个
             </div>
             </#if>
 <#--            登录框-->
@@ -87,7 +88,7 @@
             </#if>
             <#if settings.weixin_gongzhonghao?? && settings.weixin_gongzhonghao != ''>
             <div id="wpcom-post-thumb-3" class="widget widget_post_thumb">
-                <p style="font-size:16px;">${settings.gongzhonghao_remark!'关注本站公众号'}</p>
+                <p style="font-size:16px;">${settings.gongzhonghao_remark!'管理员账号'}</p>
                 <ul>
                     <li class="item">
                         <div >
