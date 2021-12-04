@@ -1,14 +1,17 @@
-<header class="header">
+<div class="image_header" style="position: absolute;width: 100%;z-index: 999;background: #f5f5f5">
+    <img style="margin: 0 auto;display: block" src="/themes/bg_header.jpg">
+</div>
+<header class="header" style="background: url('/themes/bg_nav.jpeg');height: 55px">
+
     <div class="container clearfix">
+
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
                 <span class="icon-bar icon-bar-1"></span>
                 <span class="icon-bar icon-bar-2"></span>
                 <span class="icon-bar icon-bar-3"></span>
             </button>
-            <h1 class="logo">
-                <a href="${blog_url!}" rel="home"><img src="${blog_logo!}" alt="${blog_title!}"></a>
-            </h1>
+
         </div>
         <div class="collapse navbar-collapse">
 
