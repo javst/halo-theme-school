@@ -14,7 +14,7 @@
             </div>
             <div class="footer-col footer-col-copy pull-right">
               <div class="copyright">
-                    <p>Powered  by <a href="https://halo.run/">Halo</a> • Crafted with by <a target="_blank" href="${theme.repo!}">${theme.author.name!}<a></p>
+                     Crafted with by <a target="_blank" href="${theme.repo!}">${theme.author.name!}<a></p>
                 </div>
             </div>
         </div>
