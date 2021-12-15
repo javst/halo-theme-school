@@ -103,7 +103,30 @@ function logout (){
 
 }
 
+function apply(){
+    $("#modal .md-content").empty()
+    if($("#apply-title").val().length>0&&$("#apply-norm").val().length>0&&$("#apply-link").val().length>0&&$("#apply-number").val().length>0){
+        var data ={
+            "title":$("#apply-title").val(),
+            "norm":$("#apply-norm").val(),
+            "link":$("#apply-link").val(),
+            "number":$("#apply-number").val(),
+        }
+        $.post($("#apply-form").attr("action"), data,function (data){
+            closeModel();
+            $("#modal").addClass("md-show")
+            $("#modal .md-content").append("<h3>提示</h3><h4 style=\"text-align: center;\">"+data+"</h4>")
+            $("#modal .md-content").append("<button onclick='closeModel()'  class=\"wcool-button\" href=\"#\">确定</button>")
+        })
+    }
+    else {
+        closeModel();
+        $("#modal").addClass("md-show")
+        $("#modal .md-content").append("<h3>提示</h3><h4 style=\"text-align: center;\">请填写所有信息</h4>")
+        $("#modal .md-content").append("<button onclick='closeModel()'  class=\"wcool-button\" href=\"#\">确定</button>")
 
+    }
+}
 function closeModel(){
     $("#modal").removeClass("md-show")
     $("#modal .md-content").empty()

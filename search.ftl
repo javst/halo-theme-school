@@ -32,7 +32,7 @@
                                 <div class="item-meta">
                                     <span class="item-meta-li date">${post.createTime!}</span>
                                     <div class="item-meta-right">
-                                        <span class="item-meta-li views" title="阅读数"><i class="wpcom-icon wi"></i>阅读数： ${post.visits!}</span>
+                                        <span class="item-meta-li views" title="阅读数"><i class="wpcom-icon wi"></i>规格： ${post.norms!}</span>
                                     </div>
                                 </div>
                             </div>

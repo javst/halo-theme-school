@@ -76,10 +76,11 @@
                                         <p>${post.summary!}</p>
                                     </div>
                                     <div class="item-meta">
-                                        <span class="item-meta-li date">${post.createTime!}</span>
+
                                         <div class="item-meta-right">
-                                            <span class="item-meta-li views" title="阅读数"><i class="wpcom-icon wi"><svg aria-hidden="true"><use xlink:href="/#wi-eye"/></svg></i> ${post.visits!}</span>
+                                            <span class="item-meta-li views" title="阅读数"><i class="wpcom-icon wi"><svg aria-hidden="true"><use xlink:href="/#wi-eye"/></svg></i> ${post.norms!}</span>
                                         </div>
+                                        <span class="item-meta-li date">${post.createTime!}</span>
                                     </div>
                                 </div>
                             </li>

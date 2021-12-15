@@ -4967,7 +4967,6 @@ input[type=checkbox], input[type=radio] {
 .swiper-container {
     position: relative;
     overflow: hidden;
-    z-index: 1
 }
 
 .modules-feature-posts .post-loop-card .swiper-container-no-flexbox .item, .swiper-container-no-flexbox .modules-feature-posts .post-loop-card .item, .swiper-container-no-flexbox .swiper-slide {
@@ -4988,7 +4987,6 @@ input[type=checkbox], input[type=radio] {
     padding: 0;
     margin: 0;
     min-height: 50px;
-    z-index: 1;
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -12113,7 +12111,6 @@ a.plyr__control {
 body > header.header {
     position: absolute;
     left: 0;
-    z-index: 999;
     width: 100%;
     top: 175px;
 
@@ -13054,9 +13051,10 @@ body.visual-editor > header.header {
 
 .navbar-search-icon .wi {
     display: inline-block;
-    width: 22px;
-    font-size: 18px;
-    line-height: 26px
+    width: 38px;
+    font-size: 38px;
+    line-height: 38px;
+    margin-top: -10px;
 }
 
 .navbar-search-icon:focus, .navbar-search-icon:hover {
@@ -16040,11 +16038,6 @@ body.visual-editor > header.header {
     color: #999;
     font-size: 12px
 }
-
-.post-loop-default .item-meta .item-meta-right {
-    float: right
-}
-
 .post-loop-default .item-meta .item-meta-li {
     display: inline-block;
     margin-right: 15px;
@@ -18896,7 +18889,7 @@ body {
 }
 
 .wpcom-slider .swiper-pagination {
-    z-index: 2;
+    z-index: 0;
     height: 6px;
     font-size: 0
 }

@@ -1,4 +1,4 @@
-<div class="image_header" style="position: absolute;width: 100%;z-index: 999;background: #f5f5f5">
+<div class="image_header" style="position: absolute;width: 100%;background: #f5f5f5">
     <img style="margin: 0 auto;display: block" src="/themes/bg_header.jpg">
 </div>
 <header class="header" style="background: url('/themes/bg_nav.jpeg');height: 55px">

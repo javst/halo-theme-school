@@ -32,7 +32,7 @@
                                     <span class="item-meta-li views  pull-right" title="阅读数">
                                         <i class="wpcom-icon wi">
                                             <svg aria-hidden="true"><use xlink:href="${post.fullPath!}"/></svg>
-                                        </i>阅读数:${post.visits!}</span>
+                                        </i>规格:${post.norms!}</span>
                                 </div>
                                 <div class="item-meta-author">
                                     <div class="item-meta-right">${post.createTime!date}</div>

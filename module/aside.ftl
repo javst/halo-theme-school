@@ -6,7 +6,7 @@
                 </div>
                 <p></p>
             </div>
-            <#if is_login == false>
+            <#if !is_login??>
             <div id="register-modal" class="md-modal md-effect-1">
                 <div class="md-content login-box">
                     <h3>注册</h3>
@@ -14,7 +14,7 @@
                         用户名：<input required="" id="register-username" name="username" type="text">
                         姓名：<input required="" id="register-nickname" name="nickname" type="text">
                         密码：<input required="" id="register-password" name="password" type="password">
-                        学号：<input required="" id="register-student_num" name="student_num" type="text">
+                        学/工号：<input required="" id="register-student_num" name="student_num" type="text">
                         所在院系：<input required="" id="register-department" name="department" type="text">
                         班级：<input required="" id="register-class_name" name="class_name" type="text">
                     </form>
@@ -26,19 +26,19 @@
             </#if>
             <div class="md-overlay"></div>
 <#--            价格框-->
-            <#if is_post??>
-            <div id="wpcom-post-thumb-3" class="widget widget_post_thumb">
-                <h3 class="widget-title" style="font-size:16px;">价格：<font color="#dc143c" style="margin:  10px 0">${price}</font>¥</h3>
-                <h3 class="widget-title" style="font-size:16px;">库存：<font color="#dc143c" style="margin: 10px">${stock}</font>件</h3>
-                <form method="post" id="buyForm" action="${blog_url!}/buyGoods">
-                    <input name="postId" id="post-id" value="${post.id}" type="hidden">
-                </form>
-                <button type="button" id="buyConfigure" class="wcool-button" value="购买">申请</button>
-                <input type="text" style="margin: 0 10px;width: 30px" value="1" name="amount" id="amount">个
-            </div>
-            </#if>
+<#--            <#if is_post??>-->
+<#--            <div id="wpcom-post-thumb-3" class="widget widget_post_thumb">-->
+<#--                <h3 class="widget-title" style="font-size:16px;">价格：<font color="#dc143c" style="margin:  10px 0">${price}</font>¥</h3>-->
+<#--                <h3 class="widget-title" style="font-size:16px;">库存：<font color="#dc143c" style="margin: 10px">${stock}</font>件</h3>-->
+<#--                <form method="post" id="buyForm" action="${blog_url!}/buyGoods">-->
+<#--                    <input name="postId" id="post-id" value="${post.id}" type="hidden">-->
+<#--                </form>-->
+<#--                <button type="button" id="buyConfigure" class="wcool-button" value="购买">申请</button>-->
+<#--                <input type="text" style="margin: 0 10px;width: 30px" value="1" name="amount" id="amount">个-->
+<#--            </div>-->
+<#--            </#if>-->
 <#--            登录框-->
-            <#if is_login == false>
+            <#if !is_login??>
                 <div id="wpcom-post-thumb-3" class="widget widget_post_thumb">
                     <div class="login-box">
                         <h3>登录系统</h3>
@@ -62,25 +62,20 @@
 
             </#if>
             <#--  用户信息框-->
-            <#if is_login == true>
+            <#if is_login??>
                 <div id="wpcom-post-thumb-3" class="widget widget_post_thumb">
                     <div class="login-box">
                         <h3 class="widget-title" style="font-size:16px;">个人信息</h3>
                         <p>姓名：${user.username}</p>
                         <p>余额：${user.money}</p>
-                        <p>学号：${user.student_num}</p>
+                        <p>学/工号：${user.student_num}</p>
                         <p>院系：${user.department}</p>
                         <p>班级：${user.class_name}</p>
                         <form id="user" method="post" name="user" action="${blog_url!}/login">
-
-
                         </form>
                         <button  id="sure-logout" class="wcool-button" href="#">
-
                             注销登录
                         </button>
-
-
                     </div>
 
                 </div>

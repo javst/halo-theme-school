@@ -11,6 +11,14 @@
                 <div class="entry">
                     <div class="entry-head">
                         <h1 class="entry-title">${post.title!}</h1>
+                        <h3 class="widget-title" style="font-size:16px;">规格：<font style="margin:  10px 0">${post.norms}</font></h3>
+                        <h3 class="widget-title" style="font-size:16px;">价格：<font color="#dc143c" style="margin:  10px 0">${post.price}</font>¥</h3>
+                        <h3 class="widget-title" style="font-size:16px;">库存：<font color="#dc143c" style="margin: 10px">${post.stock}</font>${post.deviceType}</h3>
+                        <form method="post" id="buyForm" action="${blog_url!}/buyGoods">
+                            <input name="postId" id="post-id"  value="${post.id?c}" type="hidden">
+                        </form>
+                        <button type="button" id="buyConfigure" class="wcool-button" value="购买">申请</button>
+                        <input type="text" style="margin: 0 10px;width: 30px" value="1" name="amount" id="amount">个
                             <div class="entry-info">
                                 <time class="entry-date published" datetime="${post.createTime!}" pubdate>${post.createTime!}</time>
                                 <#list categories as category>
