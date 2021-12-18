@@ -66,7 +66,7 @@
                 <div id="wpcom-post-thumb-3" class="widget widget_post_thumb">
                     <div class="login-box">
                         <h3 class="widget-title" style="font-size:16px;">个人信息</h3>
-                        <p>姓名：${user.username}</p>
+                        <p>姓名：${user.nickname}</p>
                         <p>余额：${user.money}</p>
                         <p>学/工号：${user.student_num}</p>
                         <p>院系：${user.department}</p>
@@ -76,6 +76,10 @@
                         <button  id="sure-logout" class="wcool-button" href="#">
                             注销登录
                         </button>
+                        <button  id="sure-logout" class="wcool-button" href="${blog_url!}/user">
+                            <a  href="${blog_url!}/user/userInformation">个人中心</a>
+                        </button>
+
                     </div>
 
                 </div>

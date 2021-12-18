@@ -923,6 +923,22 @@
     -moz-transition: all 0.5s 0.1s;
     transition: all 0.5s 0.1s;
 }
+.user-information .user-information-row{
+    margin-top: 20px;
+}
+.user-avatar{
+    width: 50%;
+    height: 50%;
+}
+.input-wsm{
+    width: 50px;
+}
+.wcool-button a{
+    color: #fff;
+}
+.wcool-button a:hover{
+    color: #000;
+}
 
 @media screen and (max-width: 32em) {
     body { font-size: 75%; }
