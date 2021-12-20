@@ -163,3 +163,20 @@ function updateOrder(id){
     }
 
 }
+function deleteOrder(id){
+    var button = "#button-" + id
+
+    $.post(deleteOrderUrl,{"orderId":id},function (data){
+        $(button).button('loading')
+        setTimeout(function (){
+            $(button).button('reset')
+        },500)
+        $(button).parent().parent().remove()
+
+    })
+
+
+}
+function applyHero(){
+    $("#applyHero").submit()
+}

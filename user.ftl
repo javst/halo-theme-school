@@ -78,29 +78,37 @@
                             <h3 class="panel-title">  我的荣誉额</h3>
                         </div>
                         <div class="user-information panel-body">
-                            <form>
+                            <form id="applyHero" enctype="multipart/form-data" action="${blog_url}/applyHero" method="post">
                                 <div class="row user-information-row">
                                     <div class="col-md-4 text-right">当前荣誉额：</div>
-                                    <div class="col-md-20">${user.money!}</div>
+                                    <div class="col-md-16">${user.money!}</div>
+                                    <div class="col-md-4">
+                                        <#if applyMoney??>
+                                            <#if applyMoney == "1">
+                                                提交成功
+                                            </#if>
+                                            <#if applyMoney == "0">
+                                                提交失败
+                                            </#if>
+                                        </#if>
+                                    </div>
                                 </div>
                                 <div class="row user-information-row">
-                                    <div class="col-md-4 text-right">照片：</div>
+                                    <div class="col-md-4 text-right">证书照片：</div>
                                     <div class="col-md-20">
-                                        <a href="#" class="thumbnail user-avatar">
-                                            <img src="${user.avatar!}" alt="...">
-                                        </a>
+                                        <input class="col-md-8" name="image" accept="image/*" value="" type="file">
                                     </div>
                                 </div>
                                 <div class="row user-information-row">
                                     <div class="col-md-4 text-right">证书名称：</div>
-                                    <div class="col-md-20"><input value=""></div>
+                                    <div class="col-md-20"><input name="title" value=""></div>
                                 </div>
                                 <div class="row user-information-row">
                                     <div class="col-md-4 text-right">申请额度：</div>
-                                    <div class="col-md-20"><input value="0"></div>
+                                    <div class="col-md-20"><input name="money" value="0"></div>
                                 </div>
                             </form>
-                            <button class="wcool-button center-block">提交</button>
+                            <button onclick="applyHero()" class="wcool-button center-block">提交</button>
                         </div>
                     </#if>
                     <#if action == "order">
@@ -122,6 +130,7 @@
                             <#list order as i>
                                 <script>
                                     var updateOrderUrl = "${blog_url}/updateOrder"
+                                    var deleteOrderUrl = "${blog_url}/deleteOrder"
                                 </script>
                                 <tr>
                                     <th>${i.device!}</th>
@@ -144,6 +153,7 @@
                                     <th>
                                         <#if i.state ==0>
                                             <button data-loading-text = "成功" id="button-${i.id?c}" onclick="updateOrder(${i.id?c})" class="btn btn-default btn-xs">提交</button>
+                                            <button data-loading-text = "成功" id="button-${i.id?c}" onclick="deleteOrder(${i.id?c})" class="btn btn-default btn-xs">撤销</button>
                                         <#else> 不可修改
                                         </#if>
                                     </th>
@@ -206,5 +216,7 @@
 <script type="text/javascript" src="${theme_base!}/source/js/wp-embed.js" id="wp-embed-js"></script>
 <script>(function ($) {$(document).ready(function () {setup_share(1);})})(jQuery);</script>
 <script type="text/javascript" src="${theme_base!}/source/js/bootstrap.min.js"></script>
+
+
 </body>
 </html>
